@@ -40,8 +40,10 @@ export const CountriesTable = ({ countries }) => {
       return api.delete(`/countries/${key}`);
     },
     onSuccess: () => {
-      queryClient.invalidateQueries("countries");
       queryClient.invalidateQueries("users");
+      queryClient.invalidateQueries("countries");
+      queryClient.invalidateQueries("records");
+      queryClient.invalidateQueries("discovers");
     },
   });
 

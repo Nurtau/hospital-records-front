@@ -42,6 +42,7 @@ export const DiseaseTypesTable = ({ diseaseTypes }) => {
     onSuccess: () => {
       queryClient.invalidateQueries("disease-types");
       queryClient.invalidateQueries("diseases");
+      queryClient.invalidateQueries("specializations");
     },
   });
 

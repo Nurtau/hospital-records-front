@@ -41,6 +41,7 @@ export const PublicServantsTable = ({ publicServants }) => {
     },
     onSuccess: () => {
       queryClient.invalidateQueries("public-servants");
+      queryClient.invalidateQueries("records");
     },
   });
 

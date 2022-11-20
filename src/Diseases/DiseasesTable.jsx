@@ -45,6 +45,8 @@ export const DiseasesTable = ({ diseases }) => {
     },
     onSuccess: () => {
       queryClient.invalidateQueries("diseases");
+      queryClient.invalidateQueries("records");
+      queryClient.invalidateQueries("discovers");
     },
   });
 
