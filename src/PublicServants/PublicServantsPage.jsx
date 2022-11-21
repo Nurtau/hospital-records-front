@@ -15,18 +15,7 @@ import { usePublicServants } from "./PublicServantsProvider";
 import { useUsers } from "../Users";
 import { useDoctors } from "../Doctors";
 import { api } from "../api";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import { modalStyle } from "../styles";
 
 export const PublicServantsPage = () => {
   const [open, setOpen] = useState(false);
@@ -87,7 +76,7 @@ const leftEmails = useMemo(() => {
       </Box>
       <PublicServantsTable publicServants={data ?? []} />
       <Modal open={open} onClose={handleClose}>
-        <Box sx={style}>
+        <Box sx={modalStyle}>
           <form onSubmit={handleSubmit(onCreate)}>
             <Typography variant="h5">Public servant form</Typography>
             <Box sx={{ display: "flex", flexDirection: "column", gap: "16px", my: "20px" }}>

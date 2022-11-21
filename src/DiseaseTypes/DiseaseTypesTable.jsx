@@ -15,18 +15,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 
 import { api } from "../api";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import { modalStyle } from "../styles";
 
 export const DiseaseTypesTable = ({ diseaseTypes }) => {
   const [selected, setSelected] = useState(null);
@@ -126,7 +115,7 @@ export const DiseaseTypesTable = ({ diseaseTypes }) => {
         open={!!selected}
         onClose={handleClose}
       >
-        <Box sx={style}>
+        <Box sx={modalStyle}>
           <form onSubmit={handleSubmit(onUpdate)}>
             <Typography variant="h5">Disease type form</Typography>
             <Box sx={{ display: "flex", gap: "16px", my: "20px" }}>

@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient, useMutation } from "react-query";
+import { useQueryClient, useMutation } from "react-query";
 import { Typography, Box, Button, Modal, TextField } from "@mui/material";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -6,18 +6,7 @@ import { useForm } from "react-hook-form";
 import { CountriesTable } from "./CountriesTable";
 import { useCountries } from "./CountriesProvider";
 import { api } from "../api";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import { modalStyle } from "../styles";
 
 export const CountriesPage = () => {
   const [open, setOpen] = useState(false);
@@ -73,7 +62,7 @@ const handleOpen = () => {
         open={open}
         onClose={handleClose}
       >
-        <Box sx={style}>
+        <Box sx={modalStyle}>
           <form onSubmit={handleSubmit(onCreate)}>
             <Typography variant="h5">Country form</Typography>
             <Box sx={{ display: "flex", gap: "16px", my: "20px" }}>

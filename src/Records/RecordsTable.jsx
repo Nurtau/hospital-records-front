@@ -19,18 +19,7 @@ import { api } from "../api";
 import { useCountries } from "../Countries";
 import { usePublicServants } from "../PublicServants";
 import { useDiseases } from "../Diseases";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import { modalStyle } from "../styles";
 
 export const RecordsTable = ({ records }) => {
   const [selected, setSelected] = useState(null);
@@ -150,7 +139,7 @@ export const RecordsTable = ({ records }) => {
         </Table>
       </TableContainer>
       <Modal open={!!selected} onClose={handleClose}>
-        <Box sx={style}>
+        <Box sx={modalStyle}>
           <form onSubmit={handleSubmit(onUpdate)}>
             <Typography variant="h5">Record form</Typography>
             <Box

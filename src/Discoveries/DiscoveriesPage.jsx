@@ -15,18 +15,7 @@ import { DiscoveriesTable } from "./DiscoveriesTable";
 import { useCountries } from "../Countries";
 import { useDiseases } from "../Diseases";
 import { api } from "../api";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import { modalStyle } from "../styles";
 
 export const DiscoveriesPage = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -86,7 +75,7 @@ export const DiscoveriesPage = () => {
       </Box>
       <DiscoveriesTable discovers={data ?? []} />
       <Modal open={open} onClose={handleClose}>
-        <Box sx={style}>
+        <Box sx={modalStyle}>
           <form onSubmit={handleSubmit(onCreate)}>
             <Typography variant="h5">Discover form</Typography>
             <Box

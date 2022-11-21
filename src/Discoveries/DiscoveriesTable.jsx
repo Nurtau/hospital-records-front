@@ -19,18 +19,7 @@ import DatePicker from "react-datepicker";
 import { api } from "../api";
 import { useCountries } from "../Countries";
 import { useDiseases } from "../Diseases";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import { modalStyle } from "../styles";
 
 export const DiscoveriesTable = ({ discovers }) => {
   const [startDate, setStartDate] = useState(new Date());
@@ -147,7 +136,7 @@ export const DiscoveriesTable = ({ discovers }) => {
         </Table>
       </TableContainer>
       <Modal open={!!selected} onClose={handleClose}>
-        <Box sx={style}>
+        <Box sx={modalStyle}>
           <form onSubmit={handleSubmit(onUpdate)}>
             <Typography variant="h5">Discovery form</Typography>
             <Box

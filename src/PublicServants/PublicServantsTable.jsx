@@ -15,18 +15,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 
 import { api } from "../api";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import { modalStyle } from "../styles";
 
 export const PublicServantsTable = ({ publicServants }) => {
   const [selected, setSelected] = useState(null);
@@ -119,7 +108,7 @@ export const PublicServantsTable = ({ publicServants }) => {
         open={!!selected}
         onClose={handleClose}
       >
-        <Box sx={style}>
+        <Box sx={modalStyle}>
           <form onSubmit={handleSubmit(onUpdate)}>
             <Typography variant="h5">Country form</Typography>
             <Box sx={{ display: "flex", flexDirection: "column", gap: "16px", my: "20px" }}>
